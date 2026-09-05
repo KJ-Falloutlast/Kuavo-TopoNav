@@ -73,8 +73,6 @@ The final isolated Gazebo run passed all automated checks rather than relying on
 | Slope obstacle-point ratio | `0.0007` |
 
 
-See [NOTICE.md](NOTICE.md) for attribution and media terms.
-
 ---
 
 ## 中文简介
