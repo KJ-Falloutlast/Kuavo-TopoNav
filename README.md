@@ -76,9 +76,5 @@ The final isolated Gazebo run passed all automated checks rather than relying on
 ---
 
 ## 中文简介
+Kuavo-TopoNav 是面向 Kuavo 人形机器人的 Livox 感知闭环动态导航系统。项目把地形感知点云分割、动态目标跟踪与 20 步高斯预测、拓扑引导并行 MPC、安全等待、速度指令一致性和双足到达后稳定性验收串成完整闭环。
 
-<<<<<<< HEAD
-Kuavo-TopoNav 是面向 Kuavo 人形机器人的 Livox 感知闭环动态导航系统。项目把地形感知点云分割、动态目标跟踪与 20 步高斯预测、拓扑引导并行 MPC、安全等待、速度指令一致性和双足到达后稳定性验收串成完整闭环。
-=======
-Kuavo-TopoNav 是面向 Kuavo 人形机器人的 Livox 感知闭环动态导航系统。项目把地形感知点云分割、动态目标跟踪与 20 步高斯预测、拓扑引导并行 MPC、安全等待、速度指令一致性和双足到达后稳定性验收串成完整闭环。
->>>>>>> ac6140af424f49b57d28ad7c2d406f370ec683ca
