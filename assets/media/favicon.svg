@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kuavo-TopoNav mark">
+  <defs>
+    <linearGradient id="g" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#07111f"/>
+  <path d="M14 45V19h7v10l11-10h9L29 30l14 15h-9L24 34l-3 3v8z" fill="url(#g)"/>
+  <circle cx="48" cy="18" r="4" fill="#fbbf24"/>
+</svg>

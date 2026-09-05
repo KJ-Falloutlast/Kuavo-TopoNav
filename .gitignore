@@ -1,0 +1,16 @@
+# This repository is a deliberately small, media-only project showcase.
+# Default-deny prevents local papers, source trees, archives, logs and notes
+# from being added accidentally.
+*
+
+!.gitignore
+!.nojekyll
+!README.md
+!NOTICE.md
+!index.html
+!404.html
+!site.webmanifest
+!robots.txt
+!sitemap.xml
+!assets/
+!assets/**

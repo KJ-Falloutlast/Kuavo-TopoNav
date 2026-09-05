@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuavo-TopoNav | LiDAR-Centric Predictive Humanoid Navigation</title>
+  <meta name="description" content="Kuavo-TopoNav connects Livox perception, dynamic prediction, topology-guided parallel MPC, and biped-safe execution for Kuavo humanoid navigation.">
+  <meta name="theme-color" content="#07111f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kuavo-TopoNav">
+  <meta property="og:description" content="LiDAR-centric predictive navigation for humanoid robots.">
+  <meta property="og:url" content="https://kj-falloutlast.github.io/Kuavo-TopoNav/">
+  <meta property="og:image" content="https://kj-falloutlast.github.io/Kuavo-TopoNav/assets/media/avoidance.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kj-falloutlast.github.io/Kuavo-TopoNav/">
+  <link rel="icon" href="assets/media/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "name": "Kuavo-TopoNav",
+    "description": "LiDAR-centric predictive navigation for Kuavo humanoid robots.",
+    "url": "https://kj-falloutlast.github.io/Kuavo-TopoNav/",
+    "author": { "@type": "Person", "name": "Kun Hu", "url": "https://github.com/KJ-Falloutlast" }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Kuavo-TopoNav home">
+        <img src="assets/media/favicon.svg" alt="">
+        <span>Kuavo-<span>TopoNav</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#contributions">Contributions</a>
+        <a href="#system">System</a>
+        <a href="#results">Results</a>
+        <a href="#reference">Reference</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div data-reveal>
+            <p class="eyebrow">Humanoid dynamic navigation</p>
+            <h1>Kuavo-<span>TopoNav</span></h1>
+            <p class="hero-lead">LiDAR-centric predictive navigation that turns sparse 3D returns into topology-aware motion—and motion into stable biped execution.</p>
+            <div class="chips" aria-label="Project technologies and status">
+              <span class="chip status">Gazebo closed loop verified</span>
+              <span class="chip">Kuavo v53</span>
+              <span class="chip">Livox</span>
+              <span class="chip">ROS Noetic</span>
+              <span class="chip">Parallel MPC</span>
+            </div>
+            <div class="actions">
+              <a class="button primary" href="#demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+                Watch the demo
+              </a>
+              <a class="button" href="https://github.com/KJ-Falloutlast/Kuavo-TopoNav">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.57-.3-5.27-1.29-5.27-5.69 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A11 11 0 0 1 12 6.1c.98 0 1.95.13 2.87.39 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.71 5.39-5.29 5.68.42.36.78 1.06.78 2.14v3.25c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+                Project repository
+              </a>
+            </div>
+          </div>
+          <div class="hero-media" data-reveal>
+            <span class="media-label">Gazebo + RViz · synchronized</span>
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/media/avoidance.png" aria-label="Kuavo-TopoNav dynamic obstacle avoidance demonstration">
+              <source src="assets/media/kuavo-toponav-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="metrics" data-reveal aria-label="Key validation results">
+          <div class="metric"><strong>0.2985 m</strong><span>truth terminal error</span></div>
+          <div class="metric"><strong>0.7865 m</strong><span>minimum center distance</span></div>
+          <div class="metric"><strong>4.0 s</strong><span>prediction horizon</span></div>
+          <div class="metric"><strong>20.020 s</strong><span>post-arrival stability</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="overview">
+      <div class="container">
+        <div class="abstract-card" data-reveal>
+          <div>
+            <p class="eyebrow">Overview</p>
+            <h2>One closed loop, from photons to footsteps.</h2>
+            <p>Kuavo-TopoNav is an end-to-end navigation framework for a slow, dynamically constrained humanoid. Physical obstacle geometry is observed only through Livox returns, separated from traversable terrain, tracked over time, and extrapolated as uncertain future motion. Costmaps and a topology-guided parallel optimizer jointly turn this evidence into a selected trajectory.</p>
+            <p>The system then checks the first action against the future obstacle corridor, preserves command direction through the velocity guard, and stabilizes gait-state transitions during a predictive wait. The result is a perception-to-control chain designed around the realities of biped locomotion—not a planner visualized in isolation.</p>
+          </div>
+          <aside class="scope-note">
+            <strong>Evidence scope</strong>
+            Validated in an isolated Gazebo scenario with Kuavo v53, ROS Noetic, Livox sensing, MPC locomotion mode, and odometry-frame rolling costmaps. Real-robot, RL, and SLAM/AMCL claims are intentionally withheld.
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contributions">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">System contributions</p>
+          <h2>Built for the gap between a planner and a humanoid.</h2>
+          <p>The work focuses on the failure modes that appear when topology-aware trajectory optimization meets sparse LiDAR, sloped terrain, moving obstacles, parallel callbacks, a low-speed biped, and real command arbitration.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-reveal><span class="card-index">01</span><h3>Sensor-grounded perception</h3><p>Finite-value cleaning and region filtering occur before voxelization. Terrain-aware segmentation combines a progressive ground model with local-surface compensation, so a traversable 8° ramp does not become a false wall while vertical objects remain detectable.</p></article>
+          <article class="card" data-reveal><span class="card-index">02</span><h3>Motion-aware predictive tracks</h3><p>Odometry-frame association produces 20 future means with Gaussian extents. Coherent displacement is required before a track becomes dynamic; stopped objects leave predictive slots but remain represented in the costmaps.</p></article>
+          <article class="card" data-reveal><span class="card-index">03</span><h3>Safe parallel optimization</h3><p>Prediction updates and parallel solvers share a synchronized snapshot. A future-corridor gate checks the actual first control, while numerical infeasibility becomes a valid zero-velocity wait rather than a blind fallback or controller abort.</p></article>
+          <article class="card" data-reveal><span class="card-index">04</span><h3>Biped-aware execution</h3><p>Angular reversals cross zero before changing sign, and gait/stance transitions use temporal hysteresis. Success is accepted only after action completion, truth terminal accuracy, obstacle separation, and a 20 s stable posture window.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="system">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <p class="eyebrow">Architecture</p>
+          <h2>Navigation evidence has one direction.</h2>
+          <p>Gazebo truth is barred from planning. It enters only the independent evaluator, shown by the dashed amber path.</p>
+        </div>
+        <div class="pipeline" data-reveal>
+          <div class="pipeline-main">
+            <div class="pipeline-node"><span class="node-tag">Sense</span><strong>Livox point cloud</strong><small>physical collision returns</small></div>
+            <div class="pipeline-node"><span class="node-tag">Perceive</span><strong>Terrain + 3D detection</strong><small>ground, clusters, boxes</small></div>
+            <div class="pipeline-node"><span class="node-tag">Predict</span><strong>Odom tracking</strong><small>20-step Gaussian future</small></div>
+            <div class="pipeline-node"><span class="node-tag">Plan</span><strong>Topology + parallel MPC</strong><small>distinct evasive candidates</small></div>
+            <div class="pipeline-node"><span class="node-tag">Protect</span><strong>Predictive safety gate</strong><small>safe wait on blockage</small></div>
+            <div class="pipeline-node"><span class="node-tag">Execute</span><strong>Kuavo gait / WBC</strong><small>guarded velocity command</small></div>
+          </div>
+          <div class="evaluator"><span>Gazebo model state</span><span>┄┄►</span><strong>acceptance evaluator only</strong><span>· source ownership · truth error · distance · posture</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Qualitative result</p>
+          <h2>Detection, prediction, and avoidance in one view.</h2>
+          <p>The Gazebo view shows physical scene motion; the synchronized RViz view shows only the navigation stack's perception and planning products.</p>
+        </div>
+        <div class="demo-frame" data-reveal>
+          <video controls muted loop playsinline preload="metadata" poster="assets/media/avoidance.png">
+            <source src="assets/media/kuavo-toponav-demo.mp4" type="video/mp4">
+            Your browser does not support the embedded MP4 demo.
+          </video>
+          <div class="demo-caption"><span>28.5 s · 4K source · Gazebo / RViz synchronized capture</span><span>Experiment captured 2026-09-05</span></div>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-card" data-reveal>
+            <button type="button" data-lightbox="assets/media/detection.png" data-alt="Gazebo obstacles and corresponding LiDAR detections in RViz" data-caption="LiDAR-only 3D detection: physical scene geometry on the left, filtered point cloud and 3D detections on the right."><img loading="lazy" src="assets/media/detection.png" alt="Gazebo obstacles and corresponding LiDAR detections in RViz"></button>
+            <figcaption><strong>01 · Detection</strong>Physical geometry becomes filtered obstacle points and 3D boxes without a truth-fed planner.</figcaption>
+          </figure>
+          <figure class="gallery-card" data-reveal>
+            <button type="button" data-lightbox="assets/media/tracking.png" data-alt="Dynamic obstacle tracking and prediction around the Kuavo robot" data-caption="Tracked dynamic entities and their future-motion representations in the odometry frame."><img loading="lazy" src="assets/media/tracking.png" alt="Dynamic obstacle tracking and prediction around the Kuavo robot"></button>
+            <figcaption><strong>02 · Prediction</strong>Persistent tracks estimate motion and expose a 20-step future to the optimizer.</figcaption>
+          </figure>
+          <figure class="gallery-card" data-reveal>
+            <button type="button" data-lightbox="assets/media/avoidance.png" data-alt="Topology-guided dynamic obstacle avoidance around the Kuavo robot" data-caption="Topology candidates, predicted obstacle occupancy, and selected evasive motion during the closed-loop run."><img loading="lazy" src="assets/media/avoidance.png" alt="Topology-guided dynamic obstacle avoidance around the Kuavo robot"></button>
+            <figcaption><strong>03 · Avoidance</strong>Distinct candidate maneuvers remain visible while the guarded command drives the biped.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Closed-loop validation</p>
+          <h2>Success means more than a green path.</h2>
+          <p>The final round passed a single automated protocol spanning source ownership, perception, prediction, planning, command execution, arrival, and biped stability.</p>
+        </div>
+        <div class="results-grid">
+          <div class="table-card" data-reveal>
+            <table>
+              <thead><tr><th>Measured quantity</th><th>Round 16</th></tr></thead>
+              <tbody>
+                <tr><td>MoveBase action state</td><td>3 · SUCCEEDED</td></tr>
+                <tr><td>Truth terminal error</td><td>0.2985 m</td></tr>
+                <tr><td>Minimum center distance</td><td>0.7865 m</td></tr>
+                <tr><td>Perception position error, P95</td><td>0.5641 m</td></tr>
+                <tr><td>Prediction speed error, P95</td><td>0.3256 m/s</td></tr>
+                <tr><td>Global-path safe-point ratio</td><td>0.9674</td></tr>
+                <tr><td>Raw / guarded yaw-sign agreement</td><td>0.9774</td></tr>
+                <tr><td>Post-arrival stable observation</td><td>20.020 s</td></tr>
+                <tr><td>Maximum roll / pitch</td><td>0.0248 / 0.0639 rad</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <aside class="protocol-card" data-reveal>
+            <h3>Acceptance protocol</h3>
+            <p class="muted">All checks must pass in the same run.</p>
+            <ul class="check-list">
+              <li>No Gazebo truth-prediction publisher feeds navigation.</li>
+              <li>Three moving physical entities are associated to LiDAR tracks.</li>
+              <li>Predictions reach the planner and detections reach both costmaps.</li>
+              <li>Global plans replan and avoid lethal cells as obstacles move.</li>
+              <li>Guidance, topology candidates, optimized paths, and Decomp remain active.</li>
+              <li>Final commands preserve the selected yaw direction.</li>
+              <li>Action success, terminal accuracy, and dynamic separation pass.</li>
+              <li>Height, roll, and pitch remain stable for 20 s after arrival.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" aria-labelledby="scope-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Claims matrix</p>
+          <h2 id="scope-heading">What is—and is not—validated.</h2>
+        </div>
+        <div class="scope-grid" data-reveal>
+          <div class="scope-item valid"><span>Validated</span><strong>Gazebo + MPC locomotion</strong></div>
+          <div class="scope-item valid"><span>Validated</span><strong>Livox-only planner input</strong></div>
+          <div class="scope-item pending"><span>Not yet claimed</span><strong>Real-robot navigation</strong></div>
+          <div class="scope-item pending"><span>Not yet claimed</span><strong>RL / SLAM / AMCL modes</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reference">
+      <div class="container">
+        <div class="reference-card" data-reveal>
+          <div>
+            <p class="eyebrow">Research context</p>
+            <h2>Clear credit, clear contribution.</h2>
+            <p class="muted">Kuavo-TopoNav contributes the Kuavo/Livox perception-to-control integration and humanoid-specific reliability mechanisms described above. Its topology-guided parallel optimization backbone is T-MPC++, the prior work of de Groot, Ferranti, Gavrila, and Alonso-Mora.</p>
+            <div class="reference-links">
+              <a href="https://arxiv.org/abs/2401.06021">Paper</a>
+              <a href="https://autonomousrobots.nl/paper_websites/topology-driven-mpc">Authors' project page</a>
+              <a href="https://github.com/tud-amr/mpc_planner">Upstream code</a>
+              <a href="NOTICE.md">Notice</a>
+            </div>
+          </div>
+          <div class="code-wrap">
+            <button class="copy-button" type="button" data-copy="#bibtex">Copy BibTeX</button>
+            <pre id="bibtex">@article{degroot2024topology,
+  title   = {Topology-Driven Parallel Trajectory
+             Optimization in Dynamic Environments},
+  author  = {de Groot, Oscar and Ferranti, Laura and
+             Gavrila, Dariu M. and Alonso-Mora, Javier},
+  journal = {IEEE Transactions on Robotics},
+  year    = {2024},
+  doi     = {10.1109/TRO.2024.3475047}
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> <a href="https://github.com/KJ-Falloutlast">Kun Hu</a> · Kuavo-TopoNav</p>
+      <p>Project media only · navigation source code is not released here.</p>
+    </div>
+  </footer>
+
+  <dialog id="image-dialog" aria-label="Expanded experiment image">
+    <img src="assets/media/avoidance.png" alt="">
+    <p></p>
+    <button class="dialog-close" type="button" aria-label="Close image">×</button>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Kuavo-TopoNav",
+  "short_name": "K-TopoNav",
+  "description": "LiDAR-centric predictive navigation for Kuavo humanoid robots.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "assets/media/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
